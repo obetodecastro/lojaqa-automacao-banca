@@ -42,6 +42,7 @@ lojaqa-automacao-banca/
 │       └── lojaqa-login.spec.ts
 ├── .env.example
 ├── .gitignore
+├── README.md
 ├── package.json
 ├── playwright.config.ts
 └── yarn.lock
@@ -76,22 +77,36 @@ Preencha as variáveis com as credenciais administrativas disponibilizadas para 
 
 ## Execução dos testes
 
-### Executar todos os testes
+### Executar todos os testes em modo headless
 
 ```bash
 yarn test --project=chromium --workers=1 --reporter=list
 ```
 
-### Executar os testes E2E com navegador visível
+### Executar toda a suíte com navegador visível nos testes E2E
+
+```bash
+yarn test:headed
+```
+
+Esse comando executa a suíte completa no Chromium. Os testes E2E são executados com o navegador visível, enquanto os testes de API continuam sendo executados no terminal.
+
+### Executar somente os testes E2E com navegador visível
 
 ```bash
 yarn playwright test tests/e2e --project=chromium --headed --workers=1 --reporter=list
 ```
 
-### Executar os testes de API
+### Executar somente os testes de API
 
 ```bash
 yarn playwright test tests/api --project=chromium --workers=1 --reporter=list
+```
+
+**Observação para Windows PowerShell:** caso o comando `yarn` seja bloqueado pela política de execução do PowerShell, utilize `yarn.cmd` no lugar de `yarn`. Por exemplo:
+
+```powershell
+yarn.cmd test:headed
 ```
 
 ## Cenários automatizados
