@@ -1,0 +1,21 @@
+
+{
+  "name": "lojaqa-automacao-banca",
+  "version": "1.0.0",
+  "description": "Automação de testes de API e E2E da LojaQA - Módulo 12",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --project=chromium --headed --workers=1 --reporter=list"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10"
+  }
+}
